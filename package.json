@@ -2,11 +2,12 @@
   "name": "git-stepper",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/stepper.js",
+  "main": "dist/index.js",
   "bin": {
-    "stepper": "./dist/stepper.js"
+    "stepper": "./dist/index.js"
   },
   "scripts": {
+    "dev": "tsc -w",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
