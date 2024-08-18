@@ -1,0 +1,41 @@
+<type>[optional_scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+
+# Conventional Commit Template
+#
+# <type>: The type of change you are committing. Common types include:
+#   - feat: A new feature
+#   - fix: A bug fix
+#   - docs: Documentation only changes
+#   - style: Changes that do not affect the meaning of the code (white-space, formatting, etc)
+#   - refactor: A code change that neither fixes a bug nor adds a feature
+#   - perf: A code change that improves performance
+#   - test: Adding missing or correcting existing tests
+#   - chore: Changes to the build process or auxiliary tools and libraries
+#
+# [optional_scope]: A scope may be provided to a commit's type to provide additional contextual information (e.g., component or file name).
+#
+# <description>: A short, imperative summary of the change. For example, "fix button alignment on mobile".
+#
+# [optional body]: A more detailed explanation of the change, if necessary.
+#
+# [optional footer(s)]: Additional information about the commit, such as "BREAKING CHANGE" or "Fixes #123".
+#
+# Example:
+#   feat(auth): add OAuth2 login
+#   
+#   Added OAuth2 login to allow users to log in with their Google accounts. This 
+#   improves the user experience by providing more login options.
+#   
+#   BREAKING CHANGE: The login API has changed to support OAuth2.
+#
+# This template provided by: https://www.conventionalcommits.org/en/v1.0.0/
+#
+# To use this template locally, run:
+# `git config --local commit.template /path/to/your/commit_template.txt`
+#
+# If you want to use this for other projects, save it somewhere accessible (like your home directory)
+# and run: `git config --global commit.template /path/to/your/commit_template.txt`
