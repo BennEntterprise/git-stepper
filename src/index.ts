@@ -4,6 +4,11 @@ import { execSync } from 'child_process';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
+// Function to print the help message
+const printHelp = () => {
+    console.log('Usage: my-stepper {forward|backward} [--compare]');
+}
+
 // Path to the temporary file to store the commits list
 const tempFilePath = join(__dirname, '.commits_cache');
 
@@ -98,14 +103,14 @@ const moveNewest = () => {
     execSync(`git checkout ${commits[commits.length - 1]}`, { stdio: 'inherit' });
 };
 
-// Main logic
-const main = () => {
-    const args = process.argv.slice(2);
-    const command = args[0];
-    const option = args[1];
+
+// Function to handle the command
+const handleCommand = (cmdArgs: string[]) => {
+    const command = cmdArgs[0];
+    const option = cmdArgs[1];
 
     switch (command) {
-        case 'forward':
+        case ('forward'):
             if (option === '--compare') {
                 compareForward();
             } else {
@@ -128,6 +133,19 @@ const main = () => {
         default:
             console.log('Usage: my-stepper {forward|backward} [--compare]');
             break;
+    }
+}
+
+// Main logic
+const main = () => {
+    // These args are the path to the node executable and the path to the script
+    const _ = process.argv.slice(0, 2);
+    const cmdArgs = process.argv.slice(2);
+
+    if (cmdArgs.length === 0) {
+        printHelp();
+    } else {
+        handleCommand(cmdArgs);
     }
 };
 

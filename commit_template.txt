@@ -39,3 +39,10 @@
 #
 # If you want to use this for other projects, save it somewhere accessible (like your home directory)
 # and run: `git config --global commit.template /path/to/your/commit_template.txt`
+# 
+# To use VSCode as an Editor
+# git config --global core.editor "code --wait"
+# 
+# To reset the Editor
+# git config --global --unset core.editor
+
