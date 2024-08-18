@@ -6,6 +6,7 @@ import { join } from 'path';
 
 // Function to print the help message
 const printHelp = () => {
+    // TODO: use commander to help with the help message
     console.log('Usage: my-stepper {forward|backward} [--compare]');
 }
 
@@ -35,6 +36,7 @@ const printLocation = () => {
     const current = getCurrentCommit();
     const currentIndex = commits.indexOf(current);
 
+    // TODO: cleanup this output, maybe with some whitespace
     console.log(`Commit ${currentIndex + 1} of ${commits.length}`);
 };
 
@@ -109,6 +111,8 @@ const handleCommand = (cmdArgs: string[]) => {
     const command = cmdArgs[0];
     const option = cmdArgs[1];
 
+    // TODO: Extract each command to a separate function
+
     switch (command) {
         case ('forward'):
             if (option === '--compare') {
@@ -139,6 +143,7 @@ const handleCommand = (cmdArgs: string[]) => {
 // Main logic
 const main = () => {
     // These args are the path to the node executable and the path to the script
+    // TODO: Use Commander.js to parse the command line arguments
     const _ = process.argv.slice(0, 2);
     const cmdArgs = process.argv.slice(2);
 
