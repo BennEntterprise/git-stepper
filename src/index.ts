@@ -3,6 +3,8 @@
 import { execSync } from 'child_process';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import { Command } from 'commander'
+import packageJson from '../package.json'
 
 // Function to print the help message
 const printHelp = () => {
@@ -140,10 +142,47 @@ const handleCommand = (cmdArgs: string[]) => {
     }
 }
 
+const program = new Command();
+
 // Main logic
-const main = () => {
+const main = async () => {
+    program
+        .name('git-stepper')
+        .description('CLI utility to help move through git history')
+        .version(`${packageJson.version}`)
+        .action((name, options, command) => {
+            console.log(`Running Action:`, name)
+        })
+
+    program
+        .command('forward')
+        .option('--compare')
+        .action((name, options, command) => {
+            console.debug(`passed options: ${JSON.stringify(name)}`)
+            if (name.compare) {
+                console.debug('comparing....')
+            } else {
+                console.debug('moving...');
+            }
+
+        })
+
+    program
+        .command('backward')
+        .option('--compare')
+        .action((name, options, command) => {
+            console.debug(`passed options: ${JSON.stringify(name)}`)
+            if (name.compare) {
+                console.debug('comparing....')
+            } else {
+                console.debug('moving...');
+            }
+
+        })
+
+    await program.parseAsync(process.argv)
+
     // These args are the path to the node executable and the path to the script
-    // TODO: Use Commander.js to parse the command line arguments
     const _ = process.argv.slice(0, 2);
     const cmdArgs = process.argv.slice(2);
 
