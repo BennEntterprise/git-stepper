@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "bin": {
-    "git-stepper": "./dist/index.js"
+    "git-stepper": "dist/index.js"
   },
   "scripts": {
     "dev": "tsc -w",
