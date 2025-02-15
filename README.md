@@ -23,3 +23,6 @@ This project aims to be usable as an `npx` command, but for now you should insta
 4. `chmod +x dist/index.js` to allow this to execute.
 5. Open a terminal in any git project and run `stepper` or `npx stepper` or `npx stepper --help`to run the help documentation
 
+## Test it out
+
+You might want to test this out on a non-code repo like [Awesome-CTO](https://github.com/kuchin/awesome-cto) first. This will largely have text changes and not code-related items.      
